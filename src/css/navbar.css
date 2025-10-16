@@ -1,0 +1,48 @@
+.navbar{
+    position:fixed;
+
+
+
+    width: 100vw;
+    height: 8vh;
+    z-index: 100;
+    background-color: rgb(17, 17, 17);
+    top:0;
+    left:50%;
+    right:50%;
+    transform: translate(-50%)
+    
+}
+
+form input{
+    height: 2rem;
+    width: 14rem;
+    border-radius: 2rem;
+    border: 1px solid rgb(104, 104, 104);
+    outline: 1px solid rgb(49, 49, 49);
+    background: rgb(17, 17, 17);
+    box-shadow: none;
+}
+form{
+    
+    position:fixed;
+    right:1vw;
+    top:1.2vh
+}
+
+#LOGO{
+    position:absolute;
+    top:0.7rem;
+    /* border:1px solid white; */
+    left:3rem;
+    fill: white;
+    height: 2rem;
+}
+
+@media (max-width: 500px) {
+    #LOGO{
+        top:1rem;
+        width: 5rem;
+        left:1.5rem;
+    }
+}

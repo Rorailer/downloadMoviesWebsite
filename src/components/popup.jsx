@@ -47,20 +47,20 @@ export function Popup({ movieInfo, setIsPopupVisible }) {
     }, [])
 
 
-    useEffect(()=>{
-        function handleResize(){
-            const newSrc = window.innerWidth>800 ? (movieInfo.background_image):(movieInfo.large_cover_image);
-            
-            if(newSrc !== imgSrc){
+    useEffect(() => {
+        function handleResize() {
+            const newSrc = window.innerWidth > 800 ? (movieInfo.background_image) : (movieInfo.large_cover_image);
+
+            if (newSrc !== imgSrc) {
                 setImgSrc(newSrc)
             }
         };
 
         handleResize();
 
-        window.addEventListener('resize',handleResize);
+        window.addEventListener('resize', handleResize);
 
-        return() => {
+        return () => {
             window.removeEventListener('resize', handleResize)
         }
     }, [movieInfo.background_image, movieInfo.large_cover_image, imgSrc])
@@ -68,8 +68,8 @@ export function Popup({ movieInfo, setIsPopupVisible }) {
 
 
 
-    useEffect(()=>{
-        if(!imgSrc){
+    useEffect(() => {
+        if (!imgSrc) {
             setIsBackgroundLoaded(false);
             return;
         }
@@ -78,21 +78,22 @@ export function Popup({ movieInfo, setIsPopupVisible }) {
         const img = new Image()
         img.src = imgSrc;
         img.onload = () => {
-            setIsBackgroundLoaded(true)}
-    },[imgSrc])
+            setIsBackgroundLoaded(true)
+        }
+    }, [imgSrc])
 
 
-    useEffect(()=>{
-        function handleKeyDown(e){
-            if(e.key === 'Escape'){
+    useEffect(() => {
+        function handleKeyDown(e) {
+            if (e.key === 'Escape') {
                 closePopup();
             }
-            
+
         };
 
         document.addEventListener('keydown', handleKeyDown);
 
-        return()=>{
+        return () => {
             document.removeEventListener('keydown', handleKeyDown);
         }
     }, [])
@@ -110,19 +111,19 @@ export function Popup({ movieInfo, setIsPopupVisible }) {
     }, [magnet])
 
 
-    function closePopup(){
+    function closePopup() {
         // console.log('closed')
-        requestAnimationFrame(()=>{
-            animate(popupRef.current,{
-                scale:[1,0.3],
-                duration:100,
+        requestAnimationFrame(() => {
+            animate(popupRef.current, {
+                scale: [1, 0.3],
+                duration: 100,
                 ease: cubicBezier(0.5, 0, 0.9, 0.3),
-                onComplete: ()=> setIsPopupVisible(null)
+                onComplete: () => setIsPopupVisible(null)
 
             })
 
         })
-        
+
     }
 
 
@@ -136,8 +137,8 @@ export function Popup({ movieInfo, setIsPopupVisible }) {
                 backgroundPosition: 'center center',
                 backgroundSize: "90% 90%"
             }}
-            
-            >
+
+        >
 
             {!movieInfo.title_english && (
 
@@ -147,30 +148,32 @@ export function Popup({ movieInfo, setIsPopupVisible }) {
                 </div>
 
             )}
-            {movieInfo.title_english && (<div className="movieInfo_text">
-                <h2 className="title">{movieInfo.title_english}</h2>
-                <h2 className="year">{movieInfo.year}</h2>
-                <h2 className="genres">{movieInfo.genres.join('/')}</h2>
-                <p>{!movieInfo.description_intro ? ("No Summary") : movieInfo.description_intro}</p>
+            {movieInfo.title_english && (
+                <div className="movieInfo_text">
+                    <h2 className="title">{movieInfo.title_english}</h2>
+                    <h2 className="rating">{movieInfo.rating}</h2>
+                    <h2 className="year">{movieInfo.year}</h2>
+                    <h2 className="genres">{movieInfo.genres.join('/')}</h2>
+                    <p>{!movieInfo.description_intro ? ("No Summary") : movieInfo.description_intro}</p>
 
 
-                <div className="video-container">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src={`https://www.youtube.com/embed/${movieInfo.yt_trailer_code}`}
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow=""
-                        allowFullScreen
-                    ></iframe>
-                </div>
+                    <div className="video-container">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src={`https://www.youtube.com/embed/${movieInfo.yt_trailer_code}`}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
 
-            </div>)}
+                </div>)}
             <div id='download'>
 
                 <button className='1080p' onClick={(e) => { e.stopPropagation(); handleDownload('1080p'); closePopup() }}>1080p</button>
-                <button className='720p' onClick={(e) => { e.stopPropagation(); handleDownload('720p'); closePopup()}}>720p</button>
+                <button className='720p' onClick={(e) => { e.stopPropagation(); handleDownload('720p'); closePopup() }}>720p</button>
             </div>
 
 

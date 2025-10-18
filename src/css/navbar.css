@@ -1,17 +1,33 @@
 .navbar{
     position:fixed;
-
-
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100vw;
     height: 8vh;
     z-index: 100;
     background-color: rgb(17, 17, 17);
     top:0;
     left:50%;
-    right:50%;
-    transform: translate(-50%)
-    
+    transform: translateX(-50%);
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
 }
 
 form input{
@@ -22,27 +38,21 @@ form input{
     outline: 1px solid rgb(49, 49, 49);
     background: rgb(17, 17, 17);
     box-shadow: none;
-}
-form{
-    
-    position:fixed;
-    right:1vw;
-    top:1.2vh
+    color: white;
+    padding-left: 1rem;
 }
 
 #LOGO{
-    position:absolute;
-    top:0.7rem;
-    /* border:1px solid white; */
-    left:3rem;
     fill: white;
     height: 2rem;
+    cursor: pointer;
 }
 
 @media (max-width: 500px) {
-    #LOGO{
-        top:1rem;
-        width: 5rem;
-        left:1.5rem;
+    .navbar {
+        padding: 0 1rem;
+    }
+    form input {
+        width: 10rem;
     }
 }

@@ -11,6 +11,45 @@
     justify-content: center;
 }
 
+
+.movieInfo_text{
+    position:absolute;
+    top:10%;
+}
+
+
+.movieInfo_text .title{
+    top:5%;
+    margin-bottom:0;
+    font-size: 3rem;
+    color:yellow
+    
+}
+
+.movieInfo_text .rating{
+    top:5%;
+    margin-bottom:0;
+    margin-top:0;
+
+    font-size: 2rem;
+    color:rgb(255, 255, 255)
+    
+}
+
+
+.movieInfo_text .year{
+    
+    /* line-height: rem; */
+    font-size: 1rem;
+    margin-bottom:0px;
+}
+.movieInfo_text .genres{
+    margin-bottom:0px;
+    
+    font-size: 1rem;
+    text-wrap: normal;
+}
+
 .popup::before{
     content: '';
     position: absolute;
@@ -24,3 +63,5 @@
     background-position: center;
     background-size: cover;
 }
+
+

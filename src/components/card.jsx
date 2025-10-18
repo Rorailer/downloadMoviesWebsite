@@ -85,8 +85,8 @@ export function Card({ details , setIsPopupVisible , classname = '' }) {
                         <img src={details.medium_cover_image} alt="image" />
                         <div className="overlay">
                             <h3 className="rating">{details.rating}/10</h3>
-                            {details.genres.map((genre) => (
-                                <h3 className="genres">{genre}</h3>
+                            {details.genres.map((genre, index) => (
+                                <h3 key={index} className="genres">{genre}</h3>
                             ))}
                         </div>
 

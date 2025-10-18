@@ -1,0 +1,15 @@
+#CurrentPage{
+    border: 1px solid rgba(255, 179, 37, 0.504);
+}
+
+.pages{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+ul button{
+    display:inline-flex;
+    margin: 0rem 0.2rem;
+}

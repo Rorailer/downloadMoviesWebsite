@@ -1,5 +1,8 @@
 import {useState} from 'react'
 import '../css/navbar.css'
+import { Link } from 'react-router-dom';
+
+
 
 
 function NavBar({ onSearch }) {
@@ -14,7 +17,15 @@ function NavBar({ onSearch }) {
         <div className="navbar">
 
             <div className="logo">
-                <img src="myLogo.svg" alt="logo" id='LOGO' />
+                <Link to='/'>
+                    <img src="myLogo.svg" alt="logo" id='LOGO' />
+                </Link>
+            </div>
+
+            <div className="links">
+                <Link to='/'>Home</Link>
+                <Link to='/details'>Details</Link>
+
             </div>
 
 

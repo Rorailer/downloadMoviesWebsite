@@ -1,4 +1,17 @@
 # Movie Discovery Web App
+# Pagination
+
+The app features a responsive pagination component for browsing large lists of movies. Pagination automatically updates and rerenders whenever the current page changes, ensuring a smooth user experience.
+
+- **Desktop View:**
+    - Displays page buttons with ellipsis for long lists.
+    - Always shows the first and last page, with a window of pages around the current selection.
+    - The current page is highlighted and non-clickable.
+- **Mobile View:**
+    - Shows simple navigation with "Back", "Next", and the current page number.
+    - Optimized for touch and small screens.
+
+Recent improvements ensure that pagination rerenders instantly when the user selects a new page, and the button logic avoids duplicates or non-functional buttons.
 
 This is a web application built with React that allows users to discover, search, and view details about movies. It fetches data from the YTS API and provides an interface to select movies for download.
 

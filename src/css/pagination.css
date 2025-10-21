@@ -13,3 +13,19 @@ ul button{
     display:inline-flex;
     margin: 0rem 0.2rem;
 }
+.mobileView{
+    display:flex;
+    justify-content: center;
+    gap:10px;
+}
+.mobileView button{
+    display:flex;
+    width:27vw;
+    color:white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.mobileView .page_number{
+    border: 2px solid rgb(245, 213, 31);
+}

@@ -1,5 +1,5 @@
-.navbar{
-    position:fixed;
+.navbar {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,8 +7,8 @@
     height: 8vh;
     z-index: 100;
     background-color: rgb(17, 17, 17);
-    top:0;
-    left:50%;
+    top: 0;
+    left: 50%;
     transform: translateX(-50%);
     padding: 0 2rem;
     box-sizing: border-box;
@@ -21,6 +21,8 @@
 
 .links {
     display: flex;
+    justify-content: center;
+    transform: translateX(30%);
     gap: 20px;
 }
 
@@ -30,7 +32,12 @@
     font-size: 1.2rem;
 }
 
-form input{
+.search {
+    display: flex;
+    align-items: center;
+}
+
+form input {
     height: 2rem;
     width: 14rem;
     border-radius: 2rem;
@@ -42,17 +49,63 @@ form input{
     padding-left: 1rem;
 }
 
-#LOGO{
+#LOGO {
     fill: white;
     height: 2rem;
     cursor: pointer;
 }
 
-@media (max-width: 500px) {
+
+@media (max-width: 800px) {
     .navbar {
         padding: 0 1rem;
     }
+
     form input {
         width: 10rem;
+    }
+
+    .logo img {
+        width: 20vw;
+        transform: translateX(-30%);
+    }
+
+    .links {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    .links .text-in-links {
+        font-size: 1.4rem
+    }
+}
+
+
+
+
+@media (max-width: 550px) {
+    .navbar {
+        padding: 0 1rem;
+
+    }
+
+    form input {
+        width: 4rem;
+    }
+
+    .logo img {
+        width: 15vw;
+        transform: translateX(-27%);
+    }
+
+    .links {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    .links .text-in-links {
+        font-size: 1.3rem;
     }
 }

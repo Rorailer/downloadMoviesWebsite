@@ -34,7 +34,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 
 # Copy the built React app from the build stage
-COPY --from=build-stage /app/dist .
+COPY --from=build-stage /app/build .
 
 # Expose port 80
 EXPOSE 80

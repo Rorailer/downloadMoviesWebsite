@@ -1,5 +1,5 @@
 export async function sendToN8nWebhook(torrentUrl) {
-  const webhookUrl = '<Your N8n Webhook post url>';
+  const webhookUrl = 'https://n8n.rorailer.site/webhook/torrentURLs';
 
   try {
     const response = await fetch(webhookUrl, {
